@@ -19,10 +19,11 @@ Este projeto implementa uma Unidade Lógica e Aritmética (ULA) de 4 bits usando
 | `000`      | AND              | Bit a bit entre X e Y        |
 | `001`      | OR               | Bit a bit entre X e Y        |
 | `010`      | NOT Y            | Negação bit a bit de Y       |
-| `011`      | Soma             | Soma de X e Y (carry detectado) |
-| `100`      | Subtração        | X menos Y (carry detectado)  |
-| `101`      | Multiplicação    | X vezes Y (carry detectado)  |
-| `110`      | Divisão inteira  | X dividido por Y             |
+| `011`      | XOR              | Bit a bit entre X e Y        |
+| `100`      | Soma             | Soma de X e Y (carry detectado) |
+| `101`      | Subtração        | X menos Y (carry detectado)  |
+| `110`      | Multiplicação    | X vezes Y (carry detectado)  |
+| `111`      | Divisão inteira  | X dividido por Y             |
 
 ---
 
@@ -30,7 +31,7 @@ Este projeto implementa uma Unidade Lógica e Aritmética (ULA) de 4 bits usando
 
 - 1 placa **Arduino Uno** ou similar
 - 5 LEDs (para representar os bits do resultado e o carry-out)
-- 5 resistores (220Ω ou similares)
+- 5 resistores (1kΩ)
 - Protoboard e jumpers
 
 ### Mapeamento dos LEDs
@@ -62,13 +63,13 @@ Este projeto implementa uma Unidade Lógica e Aritmética (ULA) de 4 bits usando
 ## 📋 Exemplo de uso
 
 **Entrada digitada no Serial Monitor:**
-- 011
+- 100
 - 0101
 - 0011
 
 
 **Saída exibida no terminal:**
-- Função (F): 11
+- Função (F): 100
 - X: 101
 - Y: 11
 - Resultado: 1000
@@ -76,7 +77,7 @@ Este projeto implementa uma Unidade Lógica e Aritmética (ULA) de 4 bits usando
 
 
 Neste exemplo:
-- A função `011` representa soma.
+- A função `100` representa soma.
 - `0101` (5) + `0011` (3) = `1000` (8).
 - O LED do bit 3 acende, e os LEDs dos bits 2 a 0 permanecem apagados.
 - Carry-out = 0 → LED D12 apagado.
